@@ -4,49 +4,139 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.2);
-    /* semi-transparent */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    /* for Safari */
-    border-radius: 10px;
+    background: radial-gradient(circle at 50% 20%, #1e1b4b 0%, #090d16 60%, #030712 100%);
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 24px;
+    box-sizing: border-box;
+    z-index: 100;
 }
 
-.loginCard{
-    background-color: black;
-    padding: 20px;
-    width: 30%;
-    border-radius: 20px;
+.loginCard {
+    background: rgba(17, 24, 39, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-xl);
+    padding: 40px 36px;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px rgba(99, 102, 241, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     color: white;
 }
 
-.loginCardTitle{
+.brandBadge {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-lg);
+    background: var(--color-brand-gradient);
     display: flex;
-    justify-content: space-between;
     align-items: center;
-
+    justify-content: center;
+    color: white;
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.4);
+    margin-bottom: 20px;
 }
 
-.googleBtn{
-    padding: 20px;
-    box-sizing: border-box;
+.loginTitle {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin: 0;
+    color: #ffffff;
+}
+
+.loginSubtitle {
+    font-size: 14px;
+    color: #94a3b8;
+    margin: 8px 0 28px 0;
+    line-height: 1.5;
+}
+
+.googleBtn {
     width: 100%;
-    background-color: white;
-    color: black;
-    border-radius: 30px;
-    font-size: 22px;
+    padding: 14px 20px;
+    box-sizing: border-box;
+    background: #ffffff;
+    color: #0f172a;
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    font-weight: 600;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 12px;
     cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border: 1px solid #e2e8f0;
 }
 
-@media screen and (max-width:780px){
-    .loginCard{
-        width: 80%;
-    }
+.googleBtn:hover {
+    background: #f8fafc;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    transform: translateY(-1px);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 24px 0 20px 0;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.divider span {
+    padding: 0 12px;
+}
+
+.demoRow {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.demoBtn {
+    flex: 1;
+    padding: 12px 14px;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #f1f5f9;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all var(--transition-fast);
+}
+
+.demoBtn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+}
+
+.securityNote {
+    margin-top: 24px;
+    font-size: 12px;
+    color: #64748b;
+    line-height: 1.5;
 }

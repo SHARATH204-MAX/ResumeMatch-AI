@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/resume_checker';
 
-mongoose.connect('Add your own Connection URL').then((res)=>{
-    console.log("Database Connected Successfully");
+mongoose.connect(mongoURI).then((res)=>{
+    console.log("Database Connected Successfully to", mongoURI);
 }).catch(err=>{
-    console.log("Something Error",err);
-})
+    console.log("Database Connection Error:", err.message);
+});

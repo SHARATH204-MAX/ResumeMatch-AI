@@ -1,198 +1,434 @@
 .Dashboard {
-    flex: 0.8;
+    flex: 1;
     height: 100vh;
-    overflow: auto;
-    padding: 50px;
+    overflow-y: auto;
+    padding: 36px 40px;
     display: flex;
-    justify-content: space-between;
-    background-color: whitesmoke;
+    gap: 32px;
+    background-color: var(--color-bg-base);
     box-sizing: border-box;
 }
 
 .DashboardLeft {
-    width: 70%;
-    padding: 30px;
-    height: 100%;
-    height: fit-content;
-    box-sizing: border-box;
-    background-color: #f4f6fa;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-
+    flex: 1.15;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
-.DashboardHeaderTitle {
-    font-size: 26px;
-    font-weight: 600;
+.headerCard {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
-.DashboardHeaderLargeTitle {
-    font-size: 52px;
+.badgePill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--color-brand-primary);
+    background: rgba(79, 70, 229, 0.08);
+    border: 1px solid rgba(79, 70, 229, 0.15);
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    width: fit-content;
 }
 
-
-.alertInfo {
-    width: 100%;
-    box-sizing: border-box;
-    border-radius: 30px;
-    padding: 15px 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 40px 0;
-    font-size: 16px;
-    background-color: white;
+.DashboardTitle {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -0.6px;
+    color: var(--color-text-main);
+    margin: 0;
 }
 
-.dashboardInstruction {
-    margin-left: 40px;
+.DashboardSubtitle {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    margin: 0;
+    max-width: 640px;
 }
 
+/* Upload Dropzone */
+.sectionCard {
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: all var(--transition-normal);
+}
 
-.DashboardUploadResume {
+.sectionHeader {
     display: flex;
     justify-content: space-between;
-    gap: 30px;
-}
-
-
-.DashboardResumeBlock {
-    width: 65%;
-    background-color: white;
-    border-radius: 30px;
-    padding: 15px 30px;
-    box-sizing: border-box;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-size: 22px;
-}
-
-.DashboardInputField {
-    display: flex;
     align-items: center;
 }
 
-.analyzeAIBtn {
-    font-size: 18px;
-    cursor: pointer;
-    padding: 20px 40px;
-    color: white;
+.sectionTitle {
+    font-size: 15px;
     font-weight: 700;
-    background: linear-gradient(90deg, #fca326, #f94a6b);
-    border-radius: 30px;
-    border: 3px solid black;
+    color: var(--color-text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-input {
+.stepNumber {
+    width: 22px;
+    height: 22px;
+    border-radius: var(--radius-full);
+    background: var(--color-brand-primary);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropzone {
+    border: 2px dashed #cbd5e1;
+    border-radius: var(--radius-md);
+    background: #f8fafc;
+    padding: 32px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    position: relative;
+}
+
+.dropzone:hover, .dropzoneActive {
+    border-color: var(--color-brand-primary);
+    background: rgba(79, 70, 229, 0.03);
+}
+
+.uploadIconWrap {
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius-full);
+    background: rgba(79, 70, 229, 0.08);
+    color: var(--color-brand-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    transition: transform var(--transition-fast);
+}
+
+.dropzone:hover .uploadIconWrap {
+    transform: translateY(-2px);
+}
+
+.dropzoneText {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text-main);
+}
+
+.dropzoneSubtext {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    margin-top: 4px;
+}
+
+.fileChosenCard {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: var(--radius-md);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.fileMeta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.fileName {
+    font-size: 14px;
+    font-weight: 600;
+    color: #166534;
+    word-break: break-all;
+}
+
+.replaceBtn {
+    font-size: 12px;
+    font-weight: 600;
+    color: #15803d;
+    background: white;
+    border: 1px solid #bbf7d0;
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.replaceBtn:hover {
+    background: #dcfce7;
+}
+
+.hiddenInput {
     display: none;
 }
 
-.jobDesc {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-    box-sizing: border-box;
+/* Job Description */
+.quickSampleBtn {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-brand-primary);
+    background: rgba(79, 70, 229, 0.06);
+    border: none;
+    padding: 5px 10px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.quickSampleBtn:hover {
+    background: rgba(79, 70, 229, 0.12);
 }
 
 .textArea {
+    width: 100%;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border-subtle);
+    padding: 14px 16px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--color-text-main);
+    background: #f8fafc;
+    resize: vertical;
     outline: none;
-    border-radius: 20px;
-    border: 2px solid rgb(14, 14, 97);
-    padding: 10px 20px;
+    transition: all var(--transition-fast);
     box-sizing: border-box;
-    width: 65%;
-    resize: none;
 }
 
-.AnalyzeBtn {
-    width: 150px;
-    height: 150px;
-    border: 3px solid black;
+.textArea:focus {
+    border-color: var(--color-border-focus);
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+.textAreaMeta {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    background: linear-gradient(90deg, #fca326, #f94a6b);
-    font-size: 22px;
+    justify-content: flex-end;
+    font-size: 12px;
+    color: var(--color-text-subtle);
+}
+
+/* Action Button */
+.ctaButton {
+    background: var(--color-brand-gradient);
     color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    padding: 16px 28px;
+    font-size: 15px;
+    font-weight: 700;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.28);
+    transition: all var(--transition-normal);
 }
+
+.ctaButton:hover:not(:disabled) {
+    background: var(--color-brand-gradient-hover);
+    box-shadow: 0 10px 24px rgba(79, 70, 229, 0.4);
+    transform: translateY(-1px);
+}
+
+.ctaButton:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Right Panel */
 .DashboardRight {
-    width: 25%;
-    height: fit-content;
-    box-sizing: border-box;
-    background-color: #f4f6fa;
+    flex: 0.85;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     gap: 20px;
-
 }
 
-.DashboardRightTopCard{
-    border-radius: 20px;
+.cardContainer {
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Result Card */
+.resultHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-border-subtle);
+    padding-bottom: 16px;
+}
+
+.resultTitle {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--color-text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.scoreBanner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
     padding: 20px;
+    border-radius: var(--radius-md);
+    background: #f8fafc;
+    border: 1px solid var(--color-border-subtle);
+}
+
+.scoreCircle {
+    width: 84px;
+    height: 84px;
+    border-radius: var(--radius-full);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    
+    color: white;
+    font-weight: 800;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
 }
 
-.DashboardRightTopCard  div:first-child{
-    font-size: 22px;
+.scoreNumber {
+    font-size: 24px;
+    line-height: 1;
+}
+
+.scoreLabel {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+.scoreDescription {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.scoreMatchStatus {
+    font-size: 16px;
     font-weight: 700;
+    color: var(--color-text-main);
 }
 
-.profileImg{
-    width: 85px ;
-    height: 85px;
-    border-radius: 100%;
-    margin: 20px 0;
+.scoreMatchHint {
+    font-size: 12px;
+    color: var(--color-text-muted);
 }
 
+.feedbackBlock {
+    background: #f8fafc;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border-subtle);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
 
+.feedbackTitle {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-text-main);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
 
-@media screen and (max-width:780px){
-    .Dashboard{
+.feedbackContent {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #334155;
+    max-height: 280px;
+    overflow-y: auto;
+    white-space: pre-line;
+}
+
+.resultMetaRow {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--color-text-subtle);
+    border-top: 1px solid var(--color-border-subtle);
+    padding-top: 12px;
+}
+
+/* Empty State Card */
+.emptyState {
+    text-align: center;
+    padding: 36px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.emptyIcon {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-full);
+    background: #f1f5f9;
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.featureList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    margin-top: 16px;
+    width: 100%;
+}
+
+.featureItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: #475569;
+}
+
+@media screen and (max-width: 1100px) {
+    .Dashboard {
         flex-direction: column;
-    }
-    .DashboardLeft{
-        width: 100%;
-    }
-    .DashboardHeaderTitle{
-        font-size: 26px;
-    }
-    .DashboardHeaderLargeTitle{
-        font-size: 34px;
-    }
-    .DashboardRight{
-        width: 100%;
-        margin-top: 30px;
-    }
-    .DashboardUploadResume{
-        flex-direction: column;
-    }
-    .DashboardResumeBlock{
-        width: 100%;
-    }
-    .DashboardInputField{
-        width: 100%;
-    }
-    label{
-        width: 100%;
-        text-align: center;
-    }
-    .jobDesc{
-        flex-direction: column;
-        gap: 20px;
-    }
-    .textArea{
-        width: 100%;
-    }
-    .AnalyzeBtn{
-        border-radius: 30px;
-        width: 100%;
-        height: fit-content;
-        padding: 15px;
-        box-sizing: border-box;
+        padding: 24px;
+        height: auto;
     }
 }
