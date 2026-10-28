@@ -35,7 +35,7 @@ const SideBar = () => {
                     </div>
                     <div className={styles.brandTextGroup}>
                         <div className={styles.brandTitle}>
-                            TalentMatch
+                            ResumeMatch
                             <span className={styles.badgeAI}>AI</span>
                         </div>
                         <div className={styles.brandSubtitle}>Screening Intelligence</div>

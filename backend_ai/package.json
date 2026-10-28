@@ -1,7 +1,7 @@
 {
   "name": "backend_ai",
   "version": "1.0.0",
-  "description": "Backend for AI MERN Project",
+  "description": "Backend for ResumeMatch AI MERN Project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

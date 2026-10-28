@@ -1,4 +1,4 @@
-# 🎯 TalentMatch AI — Intelligent Resume Screening & Benchmarking
+# 🎯 ResumeMatch AI — Intelligent Resume Screening & Benchmarking
 
 > An enterprise-grade AI-powered Resume Screening & Candidate Benchmarking application built on the **MERN** stack (MongoDB, Express.js, React 19, Node.js) and powered by **Cohere AI LLMs**.
 
@@ -22,7 +22,7 @@
 
 ## 🚀 Overview
 
-**TalentMatch AI** solves the manual overhead of evaluating candidate resumes against job descriptions. By leveraging **Cohere AI's natural language understanding models**, the system extracts textual credentials from uploaded PDF resumes, performs semantic cross-matching against specified job requirements, computes a multi-dimensional match score (0–100%), and provides constructive feedback outlining candidate strengths and skill gaps.
+**ResumeMatch AI** solves the manual overhead of evaluating candidate resumes against job descriptions. By leveraging **Cohere AI's natural language understanding models**, the system extracts textual credentials from uploaded PDF resumes, performs semantic cross-matching against specified job requirements, computes a multi-dimensional match score (0–100%), and provides constructive feedback outlining candidate strengths and skill gaps.
 
 ---
 

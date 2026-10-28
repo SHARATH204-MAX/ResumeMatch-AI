@@ -90,7 +90,7 @@ const Login = () => {
                     <AutoAwesomeRoundedIcon sx={{ fontSize: 32 }} />
                 </div>
 
-                <h1 className={styles.loginTitle}>TalentMatch AI</h1>
+                <h1 className={styles.loginTitle}>ResumeMatch AI</h1>
                 <p className={styles.loginSubtitle}>
                     AI-powered candidate screening and resume benchmark intelligence.
                 </p>
